@@ -15,6 +15,10 @@ const routes = [
   {
     path: '/',
     component: () => import('@/layouts/Dashboard.vue'),
+    beforeEnter: (to, from, next) => {
+      console.log('here');
+      next();
+    }, 
     children: [
       {
         path: '',

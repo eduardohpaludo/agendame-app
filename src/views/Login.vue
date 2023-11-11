@@ -9,32 +9,22 @@
 
 <script setup>
 import { ref } from 'vue';
-import axios from 'axios';
+import { useAuth } from '@/store/auth';
+
+const authStore = useAuth()
 
 
-const email = ref();
-const password = ref();
+const email = ref('test@example.com');
+const password = ref('password');
 
 function sanctum(){
-  axios.get('sanctum/csrf-cookie').then(r => {
-    console.log(r)
-  })
+  authStore.sanctum()
 }
 
 function login(){
-  axios.post('api/login', {
-    email: 'test@example.com',
-    password: 'password'
-  }).then(r => {
-    console.log(r)
-  })
+  authStore.login(email.value, password.value)
 }
 
-function getUser(){
-  axios.get('api/user').then(r => {
-    console.log(r)
-  })
-}
 </script>
 
 
