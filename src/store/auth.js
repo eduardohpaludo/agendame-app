@@ -1,5 +1,8 @@
 import axios from 'axios';
 import { defineStore } from "pinia";
+import { useMe } from './me';
+
+
 
 export const useAuth = defineStore('auth', {
     state: () => ({}),
@@ -14,5 +17,11 @@ export const useAuth = defineStore('auth', {
               })
         },
         logout(){}
+    },
+    getters: {
+        isLoggedIn() {
+            const meStore = useMe()
+            return !!meStore.user
+        }
     }
 })

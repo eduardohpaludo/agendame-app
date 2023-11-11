@@ -1,5 +1,6 @@
 <template>
   <VContainer>
+    {{ authStore.isLoggedIn }}
     <VTextField v-model="email"/>
     <VTextField v-model="password"/>
     <VBtn @click="sanctum">Sanctum</VBtn>
