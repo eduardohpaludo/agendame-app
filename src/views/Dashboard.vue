@@ -1,9 +1,11 @@
 <template>
-  <v-main>
-    <router-view />
-  </v-main>
+  <VContainer>
+    Dashboard
+  </VContainer>
 </template>
 
 <script setup>
-  //
+
 </script>
+
+

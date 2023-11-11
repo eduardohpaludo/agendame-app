@@ -22,7 +22,7 @@ axios.interceptors.request.use(function (config) {
   }
 
   function login(){
-    axios.post('http://localhost:8000/login', {
+    axios.post('http://localhost:8000/api/login', {
       email: 'test@example.com',
       password: 'password'
     }).then(r => {
