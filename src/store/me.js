@@ -8,7 +8,8 @@ export const useMe = defineStore('me', {
 
     actions: {
         async getMe() {
-            this.user = await axios.get('/api/user')
+            this.user = await axios.get('/api/me')
+            .then(r => r.data.data)
         }
     }
 })
